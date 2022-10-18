@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden; }
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem; }
+  body:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: .8;
+    z-index: -1;
+    background: #f12711;
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+    background: linear-gradient(to right, #f5af19, #f12711); }
+
+.boxed-page {
+  margin: 0 auto;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  position: relative;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 5px; }
+
+@media (min-width: 1200px) {
+  .boxed-page {
+    width: 1024px; }
+    .boxed-page .container {
+      max-width: 1080px;
+      padding-left: 30px;
+      padding-right: 30px; } }
+
+h1 {
+  font-size: 4.8rem; }
+
+h2 {
+  font-size: 3.6rem; }
+
+h3 {
+  font-size: 3rem; }
+
+h4 {
+  font-size: 2.4rem; }
+
+h5 {
+  font-size: 1.8rem; }
+
+h6 {
+  font-size: 1.6rem; }
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  line-height: 1.2em; }
+
+h4,
+h5,
+h6 {
+  line-height: 1.5em;
+  font-weight: 400; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Work Sans', sans-serif;
+  margin-top: 0; }
+
+p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.5em; }
+
+.section-title,
+.section-sub-title {
+  margin-bottom: 30px; }
+
+.btn {
+  font-size: 1.6rem;
+  padding: .7rem 1rem; }
+
+img {
+  max-width: 100%; }
+
+a:focus,
+button:focus {
+  outline: none; }
+
+.btn:hover,
+a:hover {
+  text-decoration: none;
+  color: #d05165; }
+
+.btn-group-lg > .btn, .btn-lg {
+  padding: 1rem; }
+
+.btn-group-sm > .btn, .btn-sm {
+  padding: .5rem; }
+
+.section-content {
+  padding-top: 80px;
+  padding-bottom: 80px; }
+
+.title-wrap,
+.section-title {
+  text-align: center; }
+
+.bg-white {
+  background-color: #fff; }
+
+.bg-grey {
+  background-color: #f7f8f9; }
+
+.bg-transparent {
+  background: transparent; }
+
+.btn-link {
+  color: #f15e75; }
+  .btn-link:hover {
+    text-decoration: none; }
+
+.color-primary {
+  color: #f15e75; }
+
+/* Colours */
+.text-orange {
+  color: #FDBA51; }
+
+.text-cyan {
+  color: #35B8AD; }
+
+.text-red {
+  color: #FC665F; }
+
+a {
+  color: #f15e75; }
+
+.fs-40 {
+  font-size: 40px; }
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none;
+  /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff; }
+
+.btn:not(.btn-link):hover {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px); }
+
+.btn-orange {
+  background-color: #FDBA51 !important;
+  color: #fff !important;
+  border: none !important; }
+
+.btn-cyan {
+  background-color: #35B8AD !important;
+  color: #fff !important;
+  border: none !important; }
+
+.btn-red {
+  background-color: #FC665F !important;
+  color: #fff !important;
+  border: none !important; }
+
+
+.navbar-nav .nav-link {
+  color: #000;
+  transition: .3s ease; }
+
+.navbar-nav:hover li a {
+  opacity: 0.5; }
+  .navbar-nav:hover li a:hover {
+    opacity: 1; }
+
+.navbar-toggler {
+  font-size: 3rem; }
+
+.not-on-top #gtco-header-navbar {
+  position: fixed;
+  max-width: 1024px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 15px 0px;
+  border-radius: 0; }
+
+.jumbotron {
+  background-color: #fff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  border-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: 0;
+  overflow: hidden;
+  min-height: 500px; }
+  @media (min-width: 1024px) {
+    .jumbotron {
+      min-height: 80vh; } }
+  .jumbotron .container {
+    position: relative; }
+  .jumbotron:before {
+    position: absolute;
+    display: block;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0.8;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+
+.filter-button-group {
+  margin-bottom: 15px; }
+  .filter-button-group a {
+    margin: 5px;
+    cursor: pointer; }
+
+.grid-link a {
+  margin: 5px;
+  font-size: 20px;
+  color: #000; }
+
+.grid-portfolio {
+  overflow: hidden; }
+
+.gutter-sizer {
+  width: 2%; }
+
+.grid-sizer,
+.grid-item {
+  width: 32%; }
+
+.grid-item {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden; }
+  .grid-item:hover .grid-info {
+    top: 50%;
+    opacity: 1; }
+
+.grid-item-wrapper:before {
+  content: '';
+  display: block;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all .3s ease;
+  opacity: 0; }
+
+.grid-item-wrapper:hover:before {
+  opacity: 1; }
+
+.grid-info {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease; }
+
+.lightcase-icon-close:before {
+  content: '\e870';
+  font-family: "Linearicons-Free"; }
+
+.grid-title {
+  text-align: center; }
+
+.blog-item {
+  transition: all 0.3s ease-in-out;
+  background-color: #f7f8f9;
+  border-radius: 3px;
+  overflow: hidden; }
+  .blog-item:hover {
+    box-shadow: 0 5px 15px -5px #333;
+    transform: translateY(-6px);
+    -webkit-transform: translateY(-6px);
+    -moz-transform: translateY(-6px);
+    transform: translateY(-6px);
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15); }
+
+.bg-grey .blog-item {
+  background-color: #fff; }
+
+.blog-item-wrapper {
+  margin-bottom: 30px; }
+
+.blog-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; }
+
+.blog-title h4 {
+  color: #000; }
+
+.blog-text {
+  padding: 15px; }
+
+.blog-tag {
+  color: #000;
+  letter-spacing: 1.1px;
+  text-transform: uppercase; }
+
+.blog-meta {
+  color: #939393; }
+  .blog-meta p {
+    display: inline-block;
+    font-size: 14px; }
+  .blog-meta a {
+    color: #939393; }
+
+.blog-author {
+  display: inline-block;
+  color: #939393; }
+  .blog-author p {
+    font-size: 14px;
+    margin-bottom: 0; }
+
+.blog-share-wrapper {
+  
+  display: inline-block;
+  margin: 0 -5px; }
+  .blog-share-wrapper .blog-share {
+    padding: 0 5px;
+    cursor: pointer; }
+
+#gtco-counter {
+  position: relative; }
+
+.counter-item {
+  text-align: center;
+  z-index: 1;
+  color: #fff; }
+  .counter-item > i {
+    display: block;
+    font-size: 40px; }
+  .counter-item .number {
+    font-size: 60px;
+    font-weight: 400;
+    display: block; }
+  .counter-item h4 {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 16px; }
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); }
+
+.price-box {
+  border: none; }
+  .price-box .card-header {
+    background-color: transparent; }
+  .price-box small {
+    font-size: 60%; }
+  .price-box .price-box-list {
+    min-height: 150px; }
+
+footer {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; }
+
+.form-control {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  height: 38px;
+  font-weight: 300; }
+  .form-control:focus {
+    border-color: #f15e75;
+    box-shadow: 0 0 0 0.2rem rgba(253, 101, 90, 0.25); }
+
+#gtco-contact-form form label.error {
+  margin-bottom: 15px;
+  color: #f15e75;
+  font-size: 1.4rem; }
+
+.form-control::-webkit-input-placeholder {
+  opacity: .5; }
+
+.form-control::-moz-placeholder {
+  opacity: .5; }
+
+.form-control:-ms-input-placeholder {
+  opacity: .5; }
+
+.form-control::-ms-input-placeholder {
+  opacity: .5; }
+
+.form-control::placeholder {
+  opacity: .5; }
+
+#form-message-warning, #form-message-success {
+  display: none; }
+
+.single-layout .jumbotron:before {
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.blog-content img.float-left {
+  margin: 15px 15px 15px 0; }
+
+.blog-content .img.float-right {
+  margin: 15px 0 15px 15px; }
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .boxed-page {
+    margin-right: 30px;
+    margin-left: 30px; }
+  .not-on-top #gtco-header-navbar {
+    margin-right: 30px;
+    margin-left: 30px; } }
+
+@media (max-width: 767px) {
+  .boxed-page {
+    margin: 4rem 15px; }
+  .not-on-top #gtco-header-navbar {
+    margin-right: 15px;
+    margin-left: 15px; }
+  .counter-item {
+    margin-bottom: 40px; }
+    .counter-item:last-child {
+      margin-bottom: 0; }
+  .section-title br,
+  .section-sub-title br {
+    display: none; }
+  .grid-item {
+    width: 100%; }
+  .card-deck {
+    flex-direction: column; } }
+
+</style>
+<body>
+	<div class="boxed-page">
+			<div class="jumbotron d-flex align-items-center" style="background-image: url(https://images.unsplash.com/photo-1549106765-3d312a9425e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fHBsYW5lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60)">
+  <div class="container text-center">
+    <h1 class="display-2 mb-4"><b>Covid is Over!!!!</b></h1>
+    <p>
+      You must be eager and excited to travel post Covid-19 pandemic.
+      <br> Worry not, here are some idea for your travel experience and idea.
+    </p>
+  </div>
+</div>		
+
+<section id="gtco-blog" class="bg-grey">
+    <div class="container">
+        <div class="section-content">
+            <div class="title-wrap mb-5">
+                <h2 class="section-title">Top <b>5</b> places I want to go after Covid-19 pandemic ended</h2>
+                <p class="section-sub-title">---</p>
+            </div>
+            <div class="row">
+                
+                <div class="col-md-12 blog-holder">
+                    <div class="row">
+                        
+                        <div class="col-md-4 blog-item-wrapper">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="https://images.unsplash.com/photo-1574218732130-6b19257fd9db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a3VhbGElMjBsdW1wdXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60" alt="">
+                                </div>
+                                <div class="blog-text">
+                                    <div class="blog-title">
+                                        <b><h4>Kuala Lumpur, Malaysia</h4></b>
+                                    </div>
+                                    <div class="blog-desc">
+                                        <p>
+                                          City Vibe explore like visiting our nation pride capital city of Kuala Lumpur. Embracing the architecture of a modern era as well as experience the beauty of Malaysia from the city view.
+                                          Kuala Lumpur, Malaysia's sophisticated and unique capital city, has a lot to offer. 
+                                          Many people flock to this great city because of its vibrant nightlife, fabulous shopping, world-class cuisine, gorgeous beaches, thriving economy, sound education, and vibrant lifestyle. 
+                                          For many tourists and travellers, the city remains a hidden gem. The city is rich in natural beauty and steeped in history. 
+                                          The sheer amount of attractions in Kuala Lumpur is incredible, as is the sheer variety of activities.
+
+                                          
+
+                                        </p>
+                                    </div>
+                                    <div class="blog-author">
+                                        <p>by Iqmal.gg</p>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-4 blog-item-wrapper">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="https://media.istockphoto.com/photos/pura-ulun-danu-bratan-temple-in-bali-picture-id675172642?b=1&k=20&m=675172642&s=170667a&w=0&h=IgKlfRYs9bs6bq3fx0WOCqdgWY3WW2-_2PKBMCcREj0=" alt="">
+                                </div>
+                                <div class="blog-text">
+                                        <b><h4>Bali, Indonesia</h4></b>
+                                    </div>
+                                    <div class="blog-desc">
+                                        <p>
+                                          The endless number of beautiful beaches is undoubtedly the most obvious reason to visit this Indonesian archipelago's tropical paradise. 
+                                          From silky white sand and limestone cliffs to extreme water sports and diving, each beach has its unique allure. 
+                                          There's a beach for everyone, every need, and every mood, from the popular Kuta and upscale Nusa Dua neighbourhoods to quiet, lonely beaches away from the masses.
+                                          Bali's attractiveness extends far beyond its attractive appearance. Many old cultural customs continue to be practised on the island. 
+                                          From the Omed-Omedan kissing festival to the monster parade before the day of silence, the Balinese hold many events and festivals throughout the year, many of which can be enjoyed by interested foreigners (Nyepi). 
+                                          Bali's culture can also be experienced through music, dance, and architecture.
+                                        </p>
+                                    </div>
+                                    <div class="blog-author">
+                                        <p>by Iqmal.gg</p>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 blog-item-wrapper">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bmV3JTIweW9ya3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60" alt="">
+                                </div>
+                                <div class="blog-text">
+                                    <div class="blog-title">
+                                        <b><h4>New York, USA</h4></b>
+                                    </div>
+                                    <div class="blog-desc">
+                                        <p>
+                                          New York is a place that every traveller should see because it is one of the world's major metropolises for art, fashion, gastronomy, and theatre. 
+                                          Choosing what to see and do, whether for a day trip or a longer stay, is the most difficult part — the possibilities are unlimited. 
+                                          
+
+                                          NYC marches to its own drumbeat, brash and thrilling. 
+                                          Showtime performers execute incredible acrobatics on subway car poles, steam pours from street gratings, horse-drawn carriages rattle around Central Park, and sirens blare every few minutes.
+                                        </p>
+                                    </div>
+                                    <div class="blog-author">
+                                        <p>by Iqmal.gg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 blog-item-wrapper">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="https://media.istockphoto.com/photos/sunset-at-seoul-city-skylinesouth-korea-picture-id621371796?b=1&k=20&m=621371796&s=170667a&w=0&h=6qfZvdg08Y9511NMWMGGh6gBqlncAybUQRmZ8i2PlRI=" alt="">
+                                </div>
+                                <div class="blog-text">
+                                    <div class="blog-title">
+                                        <b><h4>Seoul, South Korea</h4></a></b>
+                                    </div>
+                                    
+                                    <div class="blog-desc">
+                                        <p>
+                                          Korea's capital, which competes for your attention with Tokyo, Beijing, and Taipei, is sometimes ignored as one of Asia's greatest places to visit. 
+                                          However, there is a lot to see and do in Seoul that you may not be aware of.
+                                           At the Bukchon Hanok Village, skyscrapers and modern architecture, such as the Lotte World Tower, coexist with ancient Buddhist temples and traditional residences.
+
+                                           You'll find plenty of historic sites in Seoul, the country's capital, to help you learn more about Korean culture. 
+                                           Gyeongbokgung Palace, for example, is a must-see for anybody visiting the city. It was built in 1395 and served as the residence of the Joseon dynasty's monarchs, their households, and the government. You can also go to more recent historic places, such as the Korea War Memorial, which honours those who died in the Korean War.
+                                            It includes a large museum with over 10,000 antiquities on show in both indoor and outdoor exhibition halls.
+                                        </p>
+                                    </div>
+                                    <div class="blog-author">
+                                        <p>by Iqmal.gg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 blog-item-wrapper">
+                          <div class="blog-item">
+                              <div class="blog-img">
+                                  <img src="https://media.istockphoto.com/photos/spiez-castle-by-lake-thun-in-canton-of-bern-switzerland-picture-id1056772376?b=1&k=20&m=1056772376&s=170667a&w=0&h=QPxpLATnRECdOU79ac9jZ0lcwXqkxe7xlv_bUa9fCv4=" alt="">
+                              </div>
+                              <div class="blog-text">
+                                  <div class="blog-title">
+                                      <b><h4>Switzerland</h4></a></b>
+                                  </div>
+                                  
+                                  <div class="blog-desc">
+                                      <p>
+                                        Switzerland is home to some of Europe's largest and most picturesque lakes, not simply high peaks. 
+                                        From the huge length of Lake Geneva to the peaceful seclusion of the Seebergsee, Switzerland's lakes provide breathtaking views, especially during the summer when you can enjoy water sports like water skiing, diving, and rowing.
+                                        Every canton in Switzerland has its own set of traditions, customs, and even languages, resulting in a jumble of events throughout the year. 
+                                        Wherever you go, you'll be treated to rich history and cultural activities, whether it's the Valais Witches Downhill Race or Geneva's l'Escalade.
+                                  </div>
+                                  <div class="blog-author">
+                                      <p>by Iqmal.gg</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	
+</body>
+</html>
